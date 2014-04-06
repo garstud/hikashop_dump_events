@@ -5,6 +5,18 @@ Plugin to help developers to debug and understand eCommerce HikaShop plugins eve
 
 Ce plugin permet de rapidement debogguer les evenements Joomla introduits dans HikaSHop.
 
+
+## Installation de ce plugin
+
+- `1` : Cliquez sur le bouton "Download Zip", à droite de cet écran
+- `2` : installez le Zip de ce plugin HikaShop sur votre site Joomla
+- `3` : réglez les paramètres du plugin
+- `4` : activez le plugin
+- `5` : puis naviguez sur votre boutique HikaShop pour voir les messages de debugs s'afficher
+
+Note : la liste des evenements de cette v1.0.0 n'est pas exhaustive !
+
+
 ## Paramétrage du Plugin
 
 Ce plugin HikaShop, une fois installé, propose 2 types de paramètres :
