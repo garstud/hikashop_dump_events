@@ -40,12 +40,20 @@ Les 2 méthodes 'Echo' et 'Message' sont directement intégrées à l'écran de 
 
 
 ### Rendu debug systeme
-la méthode 'debug Systeme' est intégrée dans la position 'debug' du site. Pensez a l'activer dans la configuration générale de Joomla :
+La méthode 'debug Systeme' est intégrée dans la position 'debug' du site :
 
 ![alt text](/docs/captures/debug2.png "Rendu avec debug systeme")
 
 
+Note : Pensez à activer le 'debogage systeme' dans la configuration générale de Joomla :
+
+![alt text](/docs/captures/debug2b.png "configuration du debug systeme")
+
+
 ### Rendu JDump
-la méthode JDump est la plus avancée. Elle propose une popup dédiée à l'affichage des messages de debug, ainsi que les variables HikaShop associées :
+La méthode 'JDump' est la plus avancée. Elle propose une popup dédiée à l'affichage des messages de debug, ainsi que les variables HikaShop associées :
 
 ![alt text](/docs/captures/debug3.png "Rendu avec JDump")
+
+
+Note : il faut installer l'extension JDump (composant + plugin systeme)
