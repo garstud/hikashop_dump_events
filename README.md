@@ -31,7 +31,7 @@ You can set the way the plugin will dump HikaShop informations :
 
 
 ### Debug modes
-You can choose 1 or more debug modes. The rendering will depend of the choosen mode : from the most basic (echo) to the most advandced (JDump) that will also display datas form events parameter.
+You can choose 1 or more debug modes. The rendering will depend of the choosen mode : from the most basic (echo) to the most advandced (JDump) that will also display data of choosen events.
 
 - Echo : Write the message in the web page, where the event is called (it can be everywhere !)
 - Enqueued Message : write in Joomla messages queue (and display in the Jdoc type=message tag)
@@ -50,7 +50,7 @@ The 'Echo' mode writes directly the debug informations in the place they have be
 ![Rendering on the Website screen](/docs/captures/debug1.png "Rendering on the Website screen")
 
 ### 2- Rendering on the Message Queue
-The 'Enqueued message' mode display all the debug informations in one place, the JDoc type=message dedicated position.
+The 'Enqueued message' mode displays all the debug informations in one place, the JDoc type=message dedicated position.
 
 
 ### 3- Rendering in the System Debug
@@ -66,9 +66,9 @@ Note : Remember to activate the 'System Debug' in the **General configuration** 
 
 
 ### 4- Rendering with JDump extension
-The JDump solution is the most complete mode. It shows dump event in a popup window and permits to see data content of the event.
+The JDump solution is the most advanced mode. It shows dump events in a popup window and permits to see data content of the event in a dynamic JS tree.
 
-`Note :` You need to install the JDump Extension (component + system plugin) and activate it!
+`Note :` You need to install the <a href='http://extensions.joomla.org/extensions/miscellaneous/development/1509' target='_blank'>JDump Extension (component + system plugin)</a> and activate the JDump plugin!
 
 ```
 Warning : this mode is very verbose, it may block your web page with an error :
