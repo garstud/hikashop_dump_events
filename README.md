@@ -36,13 +36,13 @@ You can choose 1 or more debug modes. The rendering will depend of the choosen m
 - Echo : Write the message in the web page, where the event is called (it can be everywhere !)
 - Enqueued Message : write in Joomla messages queue (and display in the Jdoc type=message tag)
 - System debug : use the Joomla debug that display information in the 'debug' position
-- JDump : use a third-part extension called [JDump](http://extensions.joomla.org/extensions/miscellaneous/development/1509){:target="_blank"} to popup debug informations in a separate popup
+- JDump : use a third-part extension called <a href='http://extensions.joomla.org/extensions/miscellaneous/development/1509' target='_blank'>JDump</a> to popup debug informations in a separate popup
 
 
 ## 4 Rendering Dump Modes
 
 You can choose from 4 Debug modes.
-It is possible to add an automatic link to the [HikaShop Dev documentation](http://www.hikashop.com/support/documentation/62-hikashop-developer-documentation.html){:target="_blank"} within each event. (set the last parameter called 'Link to HikaShop Doc')
+It is possible to add an automatic link to the <a href='http://www.hikashop.com/support/documentation/62-hikashop-developer-documentation.html' target='_blank'>HikaShop Dev documentation</a> within each event. (set the last parameter called 'Link to HikaShop Doc')
 
 ### 1- Rendering on the Website screen
 The 'Echo' mode writes directly the debug informations in the place they have been called :
