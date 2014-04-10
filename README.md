@@ -14,7 +14,7 @@ You want to develop a plugin to extend HikaShop? Then the plugin "HikaShop Dump 
 ## Plugin installation
 
 - `1` : choose the "Download Zip" button, on the right of this screen
-- `2` : install the ZIP of this hikashop plugin on your Joomla Web site
+- `2` : install the ZIP of this hikashop plugin on your Joomla Web site (Joomla 2.5 only, J3.x is comming !)
 - `3` : set parameters of this plugin
 - `4` : activate the plugin
 - `5` : and browse to your HikaShop menu to see debug messages
