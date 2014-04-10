@@ -1,4 +1,4 @@
-Plugin Developer : HikaShop Dump Events
+HikaShop Dump Events for JDevelopers
 =====================
 
 Plugin to help developers to debug and understand eCommerce HikaShop plugins events for Joomla (onProductBlocksDisplay, onAfterCheckoutStep ...) by dumping events when they are called!
@@ -58,9 +58,14 @@ Note : Pensez à activer le 'debogage systeme' dans la configuration générale 
 
 
 ### 4- Rendering with JDump extension
-La méthode 'JDump' est la plus avancée. Elle propose une popup dédiée à l'affichage des messages de debug, ainsi que les variables HikaShop associées :
+The JDump solution is the most complete mode. It shows dump event in a popup window and permits to see data content of the event.
+
+`Note :` You need to install the JDump Extension (component + system plugin) and activate it!
+
+`Warning :` this mode is very verbose, it may block your web page with a "Error 325 (net::ERR_RESPONSE_HEADERS_TOO_BIG)".
+You may select less Events types to display JDump with big amount of data !
 
 ![alt text](/docs/captures/debug3.png "Rendu avec JDump")
 
 
-Note : il faut installer l'extension JDump (composant + plugin systeme)
+
