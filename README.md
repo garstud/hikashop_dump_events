@@ -27,41 +27,42 @@ You can set the way the plugin will dump HikaShop informations :
 - `2` : choose 'debug modes' you want to use
 - `3` : set the information you want to display
 
-![alt text](/docs/captures/debug0.png "Configuration of the plugin")
+![Parameters of the plugin](/docs/captures/debug0.png "Parameters of the plugin")
 
 
 ### Debug modes
+You can choose 1 or more debug modes. The rendering will depend of the choosen mode : from the most basic (echo) to the most advandced (JDump) that will also display datas form events parameter.
+
 - Echo : Write the message in the web page, where the event is called (it can be everywhere !)
 - Enqueued Message : write in Joomla messages queue (and display in the Jdoc type=message tag)
 - System debug : use the Joomla debug that display information in the 'debug' position
-- JDump : use a third-part extension called [JDump](http://extensions.joomla.org/extensions/miscellaneous/development/1509) to popup debug informations in a separate popup
-
-You can choose 1 or more debug modes. The rendering will depend of the choosen mode : from the most basic (echo) to the most advandced (JDump) that will also display datas form events parameter.
+- JDump : use a third-part extension called [JDump](http://extensions.joomla.org/extensions/miscellaneous/development/1509){:target="_blank"} to popup debug informations in a separate popup
 
 
 ## 4 Rendering Dump Modes
 
 You can choose from 4 Debug modes.
-It is possible to add an automatic link to the [HikaShop Dev documentation](http://www.hikashop.com/support/documentation/62-hikashop-developer-documentation.html) within each event. (set the last parameter called 'Link to HikaShop Doc')
+It is possible to add an automatic link to the [HikaShop Dev documentation](http://www.hikashop.com/support/documentation/62-hikashop-developer-documentation.html){:target="_blank"} within each event. (set the last parameter called 'Link to HikaShop Doc')
 
 ### 1- Rendering on the Website screen
-Les 2 méthodes 'Echo' et 'Message' sont directement intégrées à l'écran de la boutique :
+The 'Echo' mode writes directly the debug informations in the place they have been called :
 
-![alt text](/docs/captures/debug1.png "Rendu avec debug simple")
+![Rendering on the Website screen](/docs/captures/debug1.png "Rendering on the Website screen")
 
-### 2- Rendering on the Website screen
-Les 2 méthodes 'Echo' et 'Message' sont directement intégrées à l'écran de la boutique :
+### 2- Rendering on the Message Queue
+The 'Enqueued message' mode display all the debug informations in one place, the JDoc type=message dedicated position.
 
 
 ### 3- Rendering in the System Debug
-La méthode 'debug Systeme' est intégrée dans la position 'debug' du site :
+The 'System debug' mode is integrated in the 'debug' position (generally at the bottom of the web page) :
 
-![alt text](/docs/captures/debug2.png "Rendu avec debug systeme")
+![Rendering in the System Debug](/docs/captures/debug2.png "Rendering in the System Debug")
 
 
-Note : Pensez à activer le 'debogage systeme' dans la configuration générale de Joomla :
 
-![alt text](/docs/captures/debug2b.png "configuration du debug systeme")
+Note : Remember to activate the 'System Debug' in the **General configuration** of Joomla :
+
+![System Debug in the Joomla General configuration](/docs/captures/debug2b.png "System Debug in the Joomla General configuration")
 
 
 ### 4- Rendering with JDump extension
@@ -75,15 +76,15 @@ Warning : this mode is very verbose, it may block your web page with an error :
 solution : You may select less Events types to display JDump with big amount of data !
 ```
 
-![alt text](/docs/captures/debug3.png "Rendu avec JDump")
+![Rendering with JDump extension](/docs/captures/debug3.png "Rendering with JDump extension")
 
 ## FAQ / Problems & Answers
 
 Q: When using the JDump Debug Mode, i'll get an Error 325 (net::ERR_RESPONSE_HEADERS_TOO_BIG) ?
 > JDump permits to dump HikaShop datas (Products, Cart, Orders ...). if you use it on a page with a lot of data, The Server will not be able to transmit then via JDump.
 
-`Solution` : try to **de-select some types**, or choose 'No' to the parameter `Dump datas when using JDump`
+`Solution` : try to **de-select some types**, or choose 'No' to the parameter `Display unlimited big data` (and set a lower bytes size limit ; 15 000 bytes per default)
 
 ***
-Q:
-
+Q: how can i use this plugin to make my own plugin ?
+> You just have to copy the code of the /plugins/hikashop/dump_events/dump_events.php file. Make some cleanning on the events you don't mind, and go ahead !
