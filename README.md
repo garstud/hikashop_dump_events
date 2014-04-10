@@ -27,18 +27,26 @@ You can set the way the plugin will dump HikaShop informations :
 - Echo : Write the message in the web page, where the event is called (it can be everywhere !)
 - Enqueued Message : write in Joomla messages queue (and display in the Jdoc type=message tag)
 - System debug : use the Joomla debug that display information in the 'debug' position
-- JDump : use a third-part extension called Jdump to popup debug informations in a separate popup
+- JDump : use a third-part extension called [JDump](http://extensions.joomla.org/extensions/miscellaneous/development/1509) to popup debug informations in a separate popup
 
-Vous pouvez cumuler les choix, toutefois sachez que les choix de debug vont du plus simple (echo) au plus élaboré (JDump, avec affichage du contenu des variables)
+You can choose 1 or more debug modes. The rendering will depend of the choosen mode : from the most basic (echo) to the most advandced (JDump) that will also display datas form events parameter.
 
 
-## Rendering on the Website screen
+## 4 Rendering Dump Modes
+
+You can choose from 4 Debug modes.
+It is possible to add an automatic link to the [HikaShop Dev documentation](http://www.hikashop.com/support/documentation/62-hikashop-developer-documentation.html) within each event. (set the last parameter called 'Link to HikaShop Doc')
+
+### 1- Rendering on the Website screen
 Les 2 méthodes 'Echo' et 'Message' sont directement intégrées à l'écran de la boutique :
 
 ![alt text](/docs/captures/debug1.png "Rendu avec debug simple")
 
+### 2- Rendering on the Website screen
+Les 2 méthodes 'Echo' et 'Message' sont directement intégrées à l'écran de la boutique :
 
-## Rendering in the System Debug
+
+### 3- Rendering in the System Debug
 La méthode 'debug Systeme' est intégrée dans la position 'debug' du site :
 
 ![alt text](/docs/captures/debug2.png "Rendu avec debug systeme")
@@ -49,7 +57,7 @@ Note : Pensez à activer le 'debogage systeme' dans la configuration générale 
 ![alt text](/docs/captures/debug2b.png "configuration du debug systeme")
 
 
-## Rendering with JDump extension
+### 4- Rendering with JDump extension
 La méthode 'JDump' est la plus avancée. Elle propose une popup dédiée à l'affichage des messages de debug, ainsi que les variables HikaShop associées :
 
 ![alt text](/docs/captures/debug3.png "Rendu avec JDump")
