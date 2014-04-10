@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="2.5" method="upgrade" group="hikashop">
+	<name>Hikashop dump events Plugin</name>
+	<creationDate>avril 2014</creationDate>
+	<version>1.1.0</version>
+	<author>Garstud Workshop</author>
+	<authorEmail>dev@garstud.com</authorEmail>
+	<authorUrl>http://www.garstud.com</authorUrl>
+	<copyright>(C) 2010-2014 HIKARI SOFTWARE. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>This plugin enables you to test and debug HikaShop events. You have to set its parameters to decide which information you want to display.</description>
+	<files>
+		<filename plugin="dump_events">dump_events.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="debug_events" type="checkboxes" default="0" label="Debug events types" 
+					description="Choose wich types of events you want to debug (98 events in total)">
+					<option value="product">Products (9 events)</option>
+					<option value="category">Categories (7 events)</option>
+					<option value="order">Orders (8 events)</option>
+					<option value="address">Addresses (6 events)</option>
+					<option value="shipping">Shippings (6 events)</option>
+					<option value="payment">Payments (6 events)</option>
+					<option value="vote">Votes (6 events)</option>
+					<option value="cart">Carts (4 events)</option>
+					<option value="checkout">Checkouts (4 events)</option>
+					<option value="display">Displays (7 events)</option>
+					<option value="coupon">Coupons (3 events)</option>
+					<option value="discount">Discounts (6 events)</option>
+					<option value="user">Users (7 events)</option>
+					<option value="filter">Filters (4 events)</option>
+					<option value="fields">Fields (3 events)</option>
+					<option value="other">other triggers (11 events)</option>
+				</field>				
+				<field name="spacer1" type="spacer"	hr="true"/>
+				<field name="debug_modes" type="checkboxes" default="0" label="Debug mode" 
+					description="Choose your Debug mode type of display (simple 'echo', Enqueued message in JDoc 'message' position, System debug in debug position, dedicated popup with JDump (JDump extension must be installed))">
+					<option value="ECHO">Simple 'echo'</option>
+					<option value="QMSG">Enqueued message</option>
+					<option value="SYST">Joomla System debug </option>
+					<option value="JDUMP">JDump third-part extension Debug popup</option>
+				</field>				
+				<field name="spacer2" type="spacer"	hr="true"/>
+				<field name="disp_class" type="radio" default="1" label="Display plugin name" 
+					description="Do you want to add the plugin name in the debug trace ?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="disp_type" type="radio" default="1" label="Display plugin event type" 
+					description="Do you want to add the type name in the debug trace ? (Products, Displays, ...)">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="disp_event" type="radio" default="1" label="Display plugin event name" 
+					description="Do you want to add the event name in the debug trace ? (onAfter..., onOrder...)">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="disp_evtmsg" type="radio" default="1" label="Display plugin event message" 
+					description="Do you want to add the event message in the debug trace ?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="disp_evtlink" type="radio" default="1" label="Link to HikaShop Doc" 
+					description="Do you want to add a link to the HikaShop Plugins documentation ?">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
