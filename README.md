@@ -32,13 +32,13 @@ You can set the way the plugin will dump HikaShop informations :
 Vous pouvez cumuler les choix, toutefois sachez que les choix de debug vont du plus simple (echo) au plus élaboré (JDump, avec affichage du contenu des variables)
 
 
-## Rendu sur l'écran de la boutique
+## Rendering on the Website screen
 Les 2 méthodes 'Echo' et 'Message' sont directement intégrées à l'écran de la boutique :
 
 ![alt text](/docs/captures/debug1.png "Rendu avec debug simple")
 
 
-### Rendu debug systeme
+## Rendering in the System Debug
 La méthode 'debug Systeme' est intégrée dans la position 'debug' du site :
 
 ![alt text](/docs/captures/debug2.png "Rendu avec debug systeme")
@@ -49,7 +49,7 @@ Note : Pensez à activer le 'debogage systeme' dans la configuration générale 
 ![alt text](/docs/captures/debug2b.png "configuration du debug systeme")
 
 
-### Rendu JDump
+## Rendering with JDump extension
 La méthode 'JDump' est la plus avancée. Elle propose une popup dédiée à l'affichage des messages de debug, ainsi que les variables HikaShop associées :
 
 ![alt text](/docs/captures/debug3.png "Rendu avec JDump")
