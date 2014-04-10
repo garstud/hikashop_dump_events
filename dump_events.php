@@ -25,7 +25,6 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * TODO RAF
  * 	- ajouter des fichiers de lang FR et GB (params, err config msg, debug msg ...)
- * 	- refaire readme.md en GB + captures en GB !
  * 
  * TODO : parler des params &$do pour valider la continuité ou pas !
  * 
@@ -71,6 +70,18 @@ class plgHikashopDump_Events extends JPlugin
 			}
 		}
 		if(in_array("QMSG", $this->debugModes)) $app->enqueueMessage("Debug mode : Enqueued message");
+		
+		if(in_array("JDUMP", $this->debugModes)) {
+			$dispData = $this->params->get('disp_jdumpdata', 0);
+			$limitSize = $this->params->get('size_jdumpdata', 500);
+			if($dispData) 
+				$firstmsg = " : dumping HikaShop events data";
+			else
+				$firstmsg = " : Big data (> ".$limitSize." bytes) not sent, see Plugin parameter to display big data";
+			if(function_exists("dump")) dumpMessage("<font size='+1'>".$this->context."</font>".$firstmsg);
+		}
+		
+		
 /*
 		//introspection des methodes
 		$class = new ReflectionClass('plgHikashopDump_Events');
@@ -186,17 +197,17 @@ class plgHikashopDump_Events extends JPlugin
 		$tEvents["fields"][1] = "onFieldDateCheckSelect";
 		$tEvents["fields"][2] = "onFieldsLoad";
 
-		$tEvents["other"][] = "onBeforeCalculateProductPriceForQuantityInOrder";
-		$tEvents["other"][] = "onAfterCalculateProductPriceForQuantityInOrder";
-		$tEvents["other"][] = "onBeforeCalculateProductPriceForQuantity";
-		$tEvents["other"][] = "onAfterCalculateProductPriceForQuantity";
-		$tEvents["other"][] = "onBeforeDownloadFile";
-		$tEvents["other"][] = "onBeforeMailPrepare";
-		$tEvents["other"][] = "onBeforeMailSend";
-		$tEvents["other"][] = "onBeforeSendContactRequest";
-		$tEvents["other"][] = "onViewsListingFilter";
-		$tEvents["other"][] = "onHikashopCronTrigger";
-		$tEvents["other"][] = "onCheckSubscription";
+		$tEvents["other"][0] = "onBeforeCalculateProductPriceForQuantityInOrder";
+		$tEvents["other"][1] = "onAfterCalculateProductPriceForQuantityInOrder";
+		$tEvents["other"][2] = "onBeforeCalculateProductPriceForQuantity";
+		$tEvents["other"][3] = "onAfterCalculateProductPriceForQuantity";
+		$tEvents["other"][4] = "onBeforeDownloadFile";
+		$tEvents["other"][5] = "onBeforeMailPrepare";
+		$tEvents["other"][6] = "onBeforeMailSend";
+		$tEvents["other"][7] = "onBeforeSendContactRequest";
+		$tEvents["other"][8] = "onViewsListingFilter";
+		$tEvents["other"][9] = "onHikashopCronTrigger";
+		$tEvents["other"][10] = "onCheckSubscription";
 
 //dump($tEvents, "events list");
 
@@ -322,7 +333,7 @@ class plgHikashopDump_Events extends JPlugin
 	}
 
 	function onBeforeCategoryListingLoad(&$filters, &$order, &$parentObject) {
-		$this->_traceDebug(__FUNCTION__, "avant chargement du listing des catégories", $order);
+		$this->_traceDebug(__FUNCTION__, "avant chargement du listing des catégories", $filters);
 	}
 
 
@@ -616,11 +627,11 @@ class plgHikashopDump_Events extends JPlugin
 		$this->_traceDebug(__FUNCTION__, "", $product);
 	}
 
-	function onBeforeDownloadFile(&$filename,&$do,&$file) {
+	function onBeforeDownloadFile(&$filename,&$do, &$file) {
 		$this->_traceDebug(__FUNCTION__, "", $filename);
 	}
 
-	function onBeforeMailPrepare(&$mail,&$mailer,&$do) {
+	function onBeforeMailPrepare(&$mail,&$mailer, &$do) {
 		$this->_traceDebug(__FUNCTION__, "", $mail);
 	}
 
@@ -628,11 +639,11 @@ class plgHikashopDump_Events extends JPlugin
 		$this->_traceDebug(__FUNCTION__, "", $mail);
 	}
 
-	function onBeforeSendContactRequest(&$element,&$send) {
+	function onBeforeSendContactRequest(&$element, &$send) {
 		$this->_traceDebug(__FUNCTION__, "", $element);
 	}
 
-	function onViewsListingFilter(&$pluginViews,$client_id) {
+	function onViewsListingFilter(&$pluginViews, $client_id) {
 		$this->_traceDebug(__FUNCTION__, "", $pluginViews);
 	}
 
@@ -644,7 +655,6 @@ class plgHikashopDump_Events extends JPlugin
 		$this->_traceDebug(__FUNCTION__, "", $subscription_level);
 	}
 
-
 	
 	/**
 	 * Methode d'affichage contextuel du debug
@@ -654,14 +664,21 @@ class plgHikashopDump_Events extends JPlugin
 		if(!$this->_isEventAsked($eventName)) return;
 		
 		$dispClass = $this->params->get('disp_class', 1);
-		$msgEvent = "[<b>".($dispClass?__CLASS__."::":"").$this->_dispEvtType($eventName).$this->_dispEvtName($eventName)."</b>] ".$this->_dispEvtMsg($msg);
-		if(in_array("ECHO", $this->debugModes) && $msgEvent) echo "<br />".$msgEvent;
-		if(in_array("QMSG", $this->debugModes) && $msgEvent) {
+		$msgEventAdv = "[<b>".($dispClass?__CLASS__."::":"").$this->_dispEvtType($eventName).$this->_dispEvtName($eventName)."</b>] ".$this->_dispEvtMsg($msg);
+		$msgEvent = "[<b>".($dispClass?__CLASS__."::":"").$this->_dispEvtType($eventName).$eventName."</b>] ".$this->_dispEvtMsg($msg);
+		if(in_array("ECHO", $this->debugModes) && $msgEventAdv) echo "<br />".$msgEventAdv;
+		if(in_array("QMSG", $this->debugModes) && $msgEventAdv) {
 			$app = JFactory::getApplication();
-			$app->enqueueMessage($msgEvent);
+			$app->enqueueMessage($msgEventAdv);
 		}
 		if(in_array("SYST", $this->debugModes) && $msgEvent) JProfiler::getInstance('Application')->mark($msgEvent);
 		if(in_array("JDUMP", $this->debugModes) && $msgEvent) {
+			$dispData = $this->params->get('disp_jdumpdata', 1);
+			if(!$dispData) {
+				$dispDataSize = $this->params->get('size_jdumpdata', 500);
+				if(($sizev = $this->_sizeofvar($var)) > $dispDataSize)
+					$var = "[Data too big (".$sizev." bytes), not sent!]";	
+			}
 			if(function_exists("dump")) dump($var, $msgEvent);
 		}
 	}
@@ -700,6 +717,12 @@ class plgHikashopDump_Events extends JPlugin
 		} 
 		return "";
 	}
+	
+	private function _sizeofvar($var) {
+		$start_memory = memory_get_usage();
+		$tmp = unserialize(serialize($var));
+		return memory_get_usage() - $start_memory;
+	}	
 }
 
 
