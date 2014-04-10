@@ -35,39 +35,49 @@
 					<option value="fields">Fields (3 events)</option>
 					<option value="other">other triggers (11 events)</option>
 				</field>				
+
 				<field name="spacer1" type="spacer"	hr="true"/>
-				<field name="debug_modes" type="checkboxes" default="0" label="Debug mode" 
+				<field name="debug_modes" type="checkboxes" default="0" label="Debug modes" 
 					description="Choose your Debug mode type of display (simple 'echo', Enqueued message in JDoc 'message' position, System debug in debug position, dedicated popup with JDump (JDump extension must be installed))">
 					<option value="ECHO">Simple 'echo'</option>
 					<option value="QMSG">Enqueued message</option>
 					<option value="SYST">Joomla System debug </option>
 					<option value="JDUMP">JDump third-part extension Debug popup</option>
-				</field>				
+				</field>
+				<field name="disp_jdumpdata" type="radio" default="0" label="Display unlimited big data" 
+					description="Set 'Yes' to dump big data for each event, or 'No' if you need to display only light information in JDump">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="size_jdumpdata" type="text" default="15000" label="Size limit for big data" 
+					description="if unlimited is set to 'No', display only data that have less size then the limit in bytes (for JDump debug mode)">
+				</field>
+				
 				<field name="spacer2" type="spacer"	hr="true"/>
 				<field name="disp_class" type="radio" default="1" label="Display plugin name" 
 					description="Do you want to add the plugin name in the debug trace ?">
-					<option value="0">JNO</option>
 					<option value="1">JYES</option>
+					<option value="0">JNO</option>
 				</field>
 				<field name="disp_type" type="radio" default="1" label="Display plugin event type" 
 					description="Do you want to add the type name in the debug trace ? (Products, Displays, ...)">
-					<option value="0">JNO</option>
 					<option value="1">JYES</option>
+					<option value="0">JNO</option>
 				</field>
 				<field name="disp_event" type="radio" default="1" label="Display plugin event name" 
 					description="Do you want to add the event name in the debug trace ? (onAfter..., onOrder...)">
-					<option value="0">JNO</option>
 					<option value="1">JYES</option>
+					<option value="0">JNO</option>
 				</field>
 				<field name="disp_evtmsg" type="radio" default="1" label="Display plugin event message" 
 					description="Do you want to add the event message in the debug trace ?">
-					<option value="0">JNO</option>
 					<option value="1">JYES</option>
+					<option value="0">JNO</option>
 				</field>
 				<field name="disp_evtlink" type="radio" default="1" label="Link to HikaShop Doc" 
 					description="Do you want to add a link to the HikaShop Plugins documentation ?">
-					<option value="0">JNO</option>
 					<option value="1">JYES</option>
+					<option value="0">JNO</option>
 				</field>
 			</fieldset>
 		</fields>
