@@ -87,4 +87,4 @@ Q: When using the JDump Debug Mode, i'll get an Error 325 (net::ERR_RESPONSE_HEA
 
 ***
 Q: how can i use this plugin to make my own plugin ?
-> You just have to copy the code of the /plugins/hikashop/dump_events/dump_events.php file. Make some cleanning on the events you don't mind, and go ahead !
+> After you have use the Dump Events plugin to determine the events you have to implement, thne you just have to copy the code of the /plugins/hikashop/dump_events/dump_events.php file. Make some cleanning operations on the events you don't mind, and go ahead !
