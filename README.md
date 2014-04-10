@@ -81,10 +81,10 @@ solution : You may select less Events types to display JDump with big amount of 
 ## FAQ / Problems & Answers
 
 Q: When using the JDump Debug Mode, i'll get an Error 325 (net::ERR_RESPONSE_HEADERS_TOO_BIG) ?
-> JDump permits to dump HikaShop datas (Products, Cart, Orders ...). if you use it on a page with a lot of data, The Server will not be able to transmit then via JDump.
+> JDump permits to dump HikaShop datas (Products, Cart, Orders ...). if you use it on a page with a lot of data, The Server will not be able to transmit them to JDump tree.
 
 `Solution` : try to **de-select some types**, or choose 'No' to the parameter `Display unlimited big data` (and set a lower bytes size limit ; 15 000 bytes per default)
 
 ***
 Q: how can i use this plugin to make my own plugin ?
-> After you have use the Dump Events plugin to determine the events you have to implement, thne you just have to copy the code of the /plugins/hikashop/dump_events/dump_events.php file. Make some cleanning operations on the events you don't mind, and go ahead !
+> After you have use the Dump Events plugin to determine the events you have to implement, then you just have to copy the code of the /plugins/hikashop/dump_events/dump_events.php file. Make some cleanning operations on the events you don't mind, and go ahead !
