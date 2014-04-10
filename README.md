@@ -62,8 +62,9 @@ The JDump solution is the most complete mode. It shows dump event in a popup win
 
 `Note :` You need to install the JDump Extension (component + system plugin) and activate it!
 
-`Warning :` this mode is very verbose, it may block your web page with a "Error 325 (net::ERR_RESPONSE_HEADERS_TOO_BIG)".
-You may select less Events types to display JDump with big amount of data !
+`Warning :` this mode is very verbose, it may block your web page with a n error :
+"Error 325 (net::ERR_RESPONSE_HEADERS_TOO_BIG)".
+solution : You may select less Events types to display JDump with big amount of data !
 
 ![alt text](/docs/captures/debug3.png "Rendu avec JDump")
 
