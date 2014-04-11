@@ -3,12 +3,13 @@ HikaShop Dump Events for Joomla Developers
 
 Plugin to help developers to debug and understand eCommerce HikaShop plugins events for Joomla (onProductBlocksDisplay, onAfterCheckoutStep ...) by dumping events when they are called!
 
-> Joomla developers, did you know! ECommerce shop HikaShop has nearly **100 events plugins!**
+> Joomla developers, did you know that HikaShop nearly **100 events plugins!**
+Need a helping hand to find out what event to use?
 
 > Light core, almost endless possibilities plugins! HikaShop is a successful extension that has successfully implemented the Joomla Framework to become an eCommerce "Extensible" solution! 
 
 For a developer, it is not easy to look at all this mass of information? 
-You want to develop a plugin to extend HikaShop? Then the plugin "HikaShop Dump events" is the tool you need!
+You want to develop a plugin to extend HikaShop? Then the plugin **"HikaShop Dump events"** is the tool you need!
 
 
 ## Plugin installation
