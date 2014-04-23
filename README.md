@@ -1,6 +1,6 @@
 HikaShop Dump Events for Joomla Developers
 =====================
-
+[![Analytics](https://ga-beacon.appspot.com/UA-5106495-4/hikashop_dump_events/readme)](https://github.com/igrigorik/ga-beacon)
 Plugin to help developers to debug and understand eCommerce HikaShop plugins events for Joomla (onProductBlocksDisplay, onAfterCheckoutStep ...) by dumping events when they are called!
 
 > Joomla developers, did you know that HikaShop nearly **100 events plugins!**
